@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "llama-server-examples"
+version = "0.1.0"
+description = ""
+authors = ["Saba Fallah <s.fallah@qimia.de>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+typing-extensions = "^4.7.1"
+zmq_ai_client_python = "^1.2.0"
+huggingface-hub = "*"
+
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.4.0"
+polyfactory = "^2.5.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
