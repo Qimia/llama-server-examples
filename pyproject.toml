@@ -8,7 +8,7 @@ readme = "README.md"
 [tool.poetry.dependencies]
 python = "^3.11"
 typing-extensions = "^4.7.1"
-zmq_ai_client_python = "^1.2.0"
+zmq_ai_client_python = "^1.2.2"
 huggingface-hub = "*"
 
 
