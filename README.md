@@ -27,7 +27,7 @@ docker run --rm -it -p 5555:5555 \
 -e NUM_THREADS=6 \
 -e CONTEXT_SIZE=2048 \
 -v ./models:/app/models \
-qimia/llama-zmq-server:9cdd3098
+qimia/llama-zmq-server:dev-fddacb6c
 ```
 
 ### Run Mistral Model CPU
@@ -38,7 +38,7 @@ docker run --rm -it -p 5555:5555 \
 -e NUM_THREADS=6 \
 -e CONTEXT_SIZE=2048 \
 -v ./models:/app/models \
-qimia/llama-zmq-server:9cdd3098
+qimia/llama-zmq-server:dev-fddacb6c
 ```
 
 ### Run Vicuna Model GPU
@@ -50,7 +50,17 @@ docker run --rm -it -p 5555:5555 --runtime=nvidia --gpus 1 \
 -e CONTEXT_SIZE=2048 \
 -e NUM_GPU_LAYERS=200000 \
 -v ./models:/app/models \
-qimia/llama-zmq-server-cuda:e8c4e424
+qimia/llama-zmq-server-cuda-12.2.2:dev-fddacb6c
+```
+
+```shell
+docker run --rm -it -p 5555:5555 --runtime=nvidia --gpus 1 \
+-e MODEL_FILE=vicuna-7B-v1.5-GGUF/vicuna-7b-v1.5.Q4_K_M.gguf \
+-e NUM_THREADS=6 \
+-e CONTEXT_SIZE=2048 \
+-e NUM_GPU_LAYERS=200000 \
+-v ./models:/app/models \
+qimia/llama-zmq-server-cuda-11.7.1:dev-fddacb6c
 ```
 
 ### Run Mistral Model GPU
@@ -62,5 +72,15 @@ docker run --rm -it -p 5555:5555 --runtime=nvidia --gpus 1 \
 -e CONTEXT_SIZE=2048 \
 -e NUM_GPU_LAYERS=200000 \
 -v ./models:/app/models \
-qimia/llama-zmq-server-cuda:e8c4e424
+qimia/llama-zmq-server-cuda-12.2.2:dev-fddacb6c
+```
+
+```shell
+docker run --rm -it -p 5555:5555 --runtime=nvidia --gpus 1 \
+-e MODEL_FILE=Mistral-7B-Instruct-v0.1-GGUF/mistral-7b-instruct-v0.1.Q4_K_M.gguf \
+-e NUM_THREADS=6 \
+-e CONTEXT_SIZE=2048 \
+-e NUM_GPU_LAYERS=200000 \
+-v ./models:/app/models \
+qimia/llama-zmq-server-cuda-11.7.1:dev-fddacb6c
 ```
